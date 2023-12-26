@@ -1,0 +1,434 @@
+$("document").ready(function () {
+
+    mainSwiper();
+    moaSwiper();
+    mainYongsan();
+
+    // $(".swiper-button-prev").removeClass("swiper-button-disabled");
+    // $(".swiper-button-prev").attr("aria-disabled", "false");
+    // $(".swiper-button-next").removeClass("swiper-button-disabled");
+    // $(".swiper-button-next").attr("aria-disabled", "false");
+
+    /* 메인 모션 */
+    setTimeout(function(){
+        $('body').addClass('mainMotion')
+    },40)
+
+    function motionSet(target, loop, delay, option){
+        var motion = "fade-up";
+		if(option != undefined){
+			motion = option;
+		}
+
+		if(loop == "Y"){
+			var delay = Number(delay);
+
+			$(target).each(function (index) {
+				$(this).attr({
+					"data-aos": motion,
+					"data-aos-duration": "1000",
+					"data-aos-once": "true",
+					"data-aos-delay": delay,
+				});
+				delay = delay + 200;
+			});
+		}
+		else{
+			$(target).attr({
+				"data-aos": motion,
+				"data-aos-duration": "1000",
+				"data-aos-once": "true",
+				"data-aos-delay": delay,
+			});
+		}
+
+		AOS.init();
+    }
+
+    if( $(window).width() > 768){
+        motionSet(".mMoaView>.tit", "N", "200");
+        motionSet(".mMoaView .subTxt", "N", "200");
+        motionSet(".mMoaView .swiper-container",  "N", "600", "fade-left");
+        motionSet(".mBriefing .titArea",  "N", "200");
+        motionSet(".mBriefing .listArea>ul>li:nth-child(1)",  "N", "200");
+        motionSet(".mBriefing .listArea>ul>li:nth-child(2)",  "N", "200");
+        motionSet(".mBriefing .listArea>ul>li:nth-child(3)",  "N", "200");
+        motionSet(".mBriefing .listArea>ul>li:nth-child(4)",  "N", "200");
+        motionSet(".mBriefing .listArea>ul>li:nth-child(5)",  "N", "200");
+        motionSet(".mFact .listArea>ul",  "N", "200");
+        motionSet(".mYongSan .txtArea",  "N", "200", "fade-left");
+        motionSet(".mYongSan .visualArea",  "N", "200");
+    }else{
+        motionSet(".mMoaView>.tit", "N", "200");
+        motionSet(".mMoaView .subTxt", "N", "200");
+        motionSet(".mMoaView>.tit", "N", "200");
+        motionSet(".mMoaView .swiper-slide", "N", "200");
+        motionSet(".mBriefing .titArea", "N", "200");
+        motionSet(".mBriefing .listArea>ul>li", "N", "200");
+        motionSet(".mFact .listArea>ul>li", "N", "200");
+        motionSet(".mYongSan .visualArea",  "N", "200");
+        motionSet(".mYongSan .txtArea",  "N", "200");
+    }
+
+    /* 메인 슬라이더 */
+    function mainSwiper(){
+        var Txtswiper = new Swiper('.slide-txt', {
+            // Optional parameters
+            effect: 'fade',
+            slidesPerView: '1',
+            loop: true,
+            autoHeight : true,
+            navigation: {
+                nextEl: '.mVisual .swiper-button-next',
+                prevEl: '.mVisual .swiper-button-prev',
+            },
+            pagination: {
+                el: '.mVisual .swiper-pagination',
+                type: 'progressbar',
+            },
+            // 230623 추가 (1)
+            on: {
+                init: function () {
+                    setTimeout(function(){    
+                        $(".mVisual .slide-txt .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mVisual .slide-txt .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+                },
+                realIndexChange: function () {
+                    setTimeout(function(){    
+                        $(".mVisual .slide-txt .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mVisual .slide-txt .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+
+                }
+            }
+            // 230623 추가 끝
+        });
+    
+        // 230623 추가 (1)
+        $(".mVisual .slide-img .swiper-slide.swiper-slide-active a").on("keydown", function(e){
+            if(e.shiftKey == false && e.which == 9){
+                $(".mMoaView .swiper-slide.swiper-slide-active a").focus();
+                return false;
+            }
+        });
+        // 230623 추가 끝
+        
+        var Imgswiper = new Swiper('.slide-img', {
+            // Optional parameters
+            effect: 'fade',
+            slidesPerView: '1',
+            loop: true,
+            autoHeight : true,
+            // 230623 추가 (1)
+            on: {
+                init: function () {
+                    setTimeout(function(){    
+                        $(".mVisual .slide-img .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mVisual .slide-img .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+                },
+                slideChange: function () {
+                    setTimeout(function(){    
+                        $(".mVisual .slide-img .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mVisual .slide-img .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+
+                }
+            }
+            // 230623 추가 끝
+        });
+    
+        Txtswiper.controller.control = Imgswiper;
+        Imgswiper.controller.control = Txtswiper;
+
+        Imgswiper.on('slideNextTransitionEnd',function(){
+            if($(".mVisual .swiper-button-prev").hasClass("swiper-button-disabled")){
+                $(".mVisual .swiper-button-prev").removeClass("swiper-button-disabled");
+                $(".mVisual swiper-button-prev").attr("aria-disabled", "false");
+            }
+            if($(".mVisual .swiper-button-next").hasClass("swiper-button-disabled")){
+                $(".mVisual .swiper-button-next").removeClass("swiper-button-disabled");
+                $(".mVisual .swiper-button-next").attr("aria-disabled", "false");
+            }
+        })
+    };
+
+    var nowScrollTop = $(window).scrollTop();
+    if(nowScrollTop > 0){
+        $('body').addClass('sticky')
+    }else{
+        $('body').removeClass('sticky')
+    }
+    
+
+    $(window).scroll(function () {
+        var nowScrollTop = $(this).scrollTop();
+        var windowH = $(window).innerHeight();
+        var winBtmH = nowScrollTop + windowH;
+
+        var mMoaViewT = $(".mMoaView").offset().top;
+        var mBriefingT = $(".mBriefing").offset().top;
+        var mFactT = $(".mFact").offset().top;
+        var mYongSanT = $(".mYongSan .utilArea").offset().top;
+
+         // top Sticky
+        if(nowScrollTop > 0){
+            $('body').addClass('sticky')
+        }else{
+            $('body').removeClass('sticky')
+        }
+
+        if (winBtmH > mMoaViewT) {
+            $(".mMoaView").addClass('ani')
+        }
+
+        if (winBtmH > mBriefingT) {
+            $(".mBriefing").addClass('ani')
+        }
+
+        if (winBtmH > mFactT) {
+            $(".mFact").addClass('ani')
+        }
+
+        if (winBtmH > mYongSanT) {
+            $(".mYongSan .utilArea").addClass('ani')
+        }
+    });
+    
+
+    /* 모아보기 슬라이더*/
+    var mySwiper = undefined;
+    function moaSwiper() {
+        var screenWidth = $(window).width();
+        
+        if(screenWidth > 768 && mySwiper == undefined){
+            mySwiper = new Swiper('.mMoaView .swiper-container', {
+				// Optional parameters
+				slidesPerView: 'auto',
+				loop: true,
+				speed: 300,
+				observer: true,
+				observeParents: true,
+				spaceBetween: 23,
+				navigation : {
+					nextEl : '.mMoaView .swiper-button-next', 
+					prevEl : '.mMoaView .swiper-button-prev', 
+				},
+                // 230623 추가 (1)
+                on: {
+                    init: function () {
+                        setTimeout(function(){    
+                            var activeIndex = $(".mMoaView .swiper-slide-active").index() + 1;
+                            
+                            $(".mMoaView .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                            $(".mMoaView .swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                            $(".mMoaView :nth-child(n+"+activeIndex+"):nth-child(-n+"+(activeIndex+3)+") a").attr({"tabindex" : "0","aria-hidden" : false});
+                        },300);
+                    },
+                    slideChange: function () {
+                        setTimeout(function(){    
+                            var activeIndex = $(".mMoaView .swiper-slide-active").index() + 1;
+                            
+                            $(".mMoaView .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                            $(".mMoaView .swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                            $(".mMoaView :nth-child(n+"+activeIndex+"):nth-child(-n+"+(activeIndex+3)+") a").attr({"tabindex" : "0","aria-hidden" : false});
+                        },300);
+                    }
+                }
+                // 230623 추가 끝
+			});
+        }else if(screenWidth <= 768 && mySwiper != undefined){
+            mySwiper.destroy();
+            mySwiper = undefined;
+            $('.mMoaView .swiper-wrapper').removeAttr('style');
+            $('.mMoaView .swiper-slide').removeAttr('style');    
+        };
+
+        if(screenWidth > 768){
+            mySwiper.on('slideNextTransitionEnd',function(){
+                if($(".mMoaView .swiper-button-prev").hasClass("swiper-button-disabled")){
+                    $(".mMoaView .swiper-button-prev").removeClass("swiper-button-disabled");
+                    $(".mMoaView .swiper-button-prev").attr("aria-disabled", "false");
+                }
+                if($(".mMoaView .swiper-button-next").hasClass("swiper-button-disabled")){
+                    $(".mMoaView .swiper-button-next").removeClass("swiper-button-disabled");
+                    $(".mMoaView .swiper-button-next").attr("aria-disabled", "false");
+                }
+            })
+        }
+    }
+    
+    $(window).on('resize', function(){
+        moaSwiper();
+		setTimeout(function(){
+            if(mySwiper != undefined){
+                mySwiper.update();
+            }
+			
+		},300);
+    });
+
+    /* 모아보기 슬라이더 모바일 더보기 */
+    var moaLength = $('.mMoaView .swiper-slide').length;
+    if(moaLength > 4){
+        $('.mMoaView .btn_more').addClass('active')
+    }else{
+        $('.mMoaView .btn_more').removeClass('active')
+    }
+
+    $('.mMoaView .btn_more.active').on('click',function(event){
+        $('.mMoaView .swiper-slide:nth-child(4)>a').focus();
+        $('.mMoaView .swiper-slide:nth-child(n+5)').show();
+        $('.mMoaView .btn_more').hide();
+    });
+
+
+    /* 용산시대 슬라이더*/
+    function mainYongsan(){
+        var Txtswiper_y = new Swiper('.mYongSan .swiper-container', {
+            // Optional parameters
+            effect: 'fade',
+            loop: 'true',
+            slidesPerView: '1',
+            navigation: {
+                nextEl: '.mYongSan .swiper-button-next',
+                prevEl: '.mYongSan .swiper-button-prev',
+            },
+            // 0629 추가
+            on: {
+                init: function () {
+                    setTimeout(function(){    
+                        $(".mYongSan .swiper-container .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mYongSan .swiper-container .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+                },
+                realIndexChange: function () {
+                    setTimeout(function(){    
+                        $(".mYongSan .swiper-container .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mYongSan .swiper-container .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+
+                }
+            }
+            // 0629 추가 끝
+        });
+
+       
+        Txtswiper_y.on('slideNextTransitionEnd',function(){
+            if($(".mYongSan .swiper-button-prev").hasClass("swiper-button-disabled")){
+                $(".mYongSan .swiper-button-prev").removeClass("swiper-button-disabled");
+                $(".mYongSan .swiper-button-prev").attr("aria-disabled", "false");
+            }
+            if($(".mYongSan .swiper-button-next").hasClass("swiper-button-disabled")){
+                $(".mYongSan .swiper-button-next").removeClass("swiper-button-disabled");
+                $(".mYongSan .swiper-button-next").attr("aria-disabled", "false");
+            }
+        })
+
+        var YonsanTxtswiper = new Swiper('.mYongSan .txt_swiper', {
+            // Optional parameters
+            loop: 'true',
+            slidesPerView: '1',
+            autoHeight : true,
+            // 0629 추가
+            on: {
+                init: function () {
+                    setTimeout(function(){    
+                        $(".mYongSan .txt_swiper .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mYongSan .txt_swiper .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+                },
+                realIndexChange: function () {
+                    setTimeout(function(){    
+                        $(".mYongSan .txt_swiper .swiper-slide a").attr({"tabindex":"-1","aria-hidden" : true});
+                        $(".mYongSan .txt_swiper .swiper-slide.swiper-slide-active a").attr({"tabindex" : "0","aria-hidden" : false});
+                    },300);
+
+                }
+            }
+            // 0629 추가 끝
+        });
+
+        Txtswiper_y.controller.control = YonsanTxtswiper;
+        YonsanTxtswiper.controller.control = Txtswiper_y;
+    }
+
+    /**
+     * magnific popup
+     */
+    $.each($('.link-video'), function (index, item) {
+        $(item).magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true,
+            closeMarkup: '<img class="video_close_btn" src="/assets/images/common/ic_close.svg">',
+            iframe:{
+                patterns: {
+                    youtube_short: {
+                        index: 'youtu.be/',
+                        id: 'youtu.be/',
+                        src: '//www.youtube.com/embed/%id%?autoplay=1'
+                    }
+                }
+            },
+            callbacks: {
+                open: function() {
+                    $('.video_close_btn').on('click',function(event){
+                        event.preventDefault();
+                        $.magnificPopup.close();
+                    });
+                }
+            }
+        });
+    });
+
+
+    // 띠배너
+    function TopHeadBnrSlide(){
+        var bnrSwiper = new Swiper('.HeadBnrWrap .swiper', {
+            // Optional parameters
+            loop: 'true',
+            slidesPerView: '1',
+            navigation: {
+                nextEl: '.HeadBnrWrap .nextBtn',
+                prevEl: '.HeadBnrWrap .prevBtn',
+            },
+            pagination: {
+                el: ".HeadBnrWrap .swiper-pagination",
+                type: "fraction",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+        });
+
+        $('.HeadBnrWrap .autoplay_btn .stop').click(function(){
+            $('.HeadBnrWrap .autoplay_btn .stop').hide();
+            $('.HeadBnrWrap .autoplay_btn .start').show();
+            bnrSwiper.autoplay.stop();
+        })
+
+        $('.HeadBnrWrap .autoplay_btn .start').click(function(){
+            $('.HeadBnrWrap .autoplay_btn .start').hide();
+            $('.HeadBnrWrap .autoplay_btn .stop').show();
+
+            bnrSwiper.autoplay.start();
+        })
+    }
+
+    if($('.HeadBnrWrap .swiper .item').length > 1){
+        TopHeadBnrSlide()
+        $('.HeadBnrWrap .bnr_util .slider_util').addClass('on');
+    }
+
+    $('.HeadBnrWrap .limit .btn_close').click(function(){
+        $('.HeadBnrWrap').remove();
+    })
+
+
+});
+

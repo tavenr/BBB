@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html dir="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="referrer" content="unsafe-url" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="data:,">
+  <title></title>
+  <style>
+    .info {
+      text-align: center;
+      width: 90%;
+      max-width: 630px;
+      margin: 10% auto;
+      font-size: 18px;
+      font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    }
+    
+    .s12f4b3969f466be4c12f6a8b4f662b85 {
+      border: 2px solid transparent;
+      background: #28a745;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 15px;
+      padding: 10px 10px;
+      text-decoration: none;
+      text-shadow: none;
+      border-radius: 3px;
+      box-shadow: none;
+      transition: 0.25s;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .s12f4b3969f466be4c12f6a8b4f662b85:hover {
+      background-color: #218838;
+    }
+    
+    .sf1f040872d68ba409fd23d0c6de4ea01 {
+      cursor: pointer;
+      padding: 14px 14px;
+      text-decoration: none;
+      display: inline-block;
+      width: 14px;
+      height: 16px;
+    }
+    
+    .sf1f040872d68ba409fd23d0c6de4ea01:hover {
+      border: 2px solid #ccc;
+      width: 10px;
+      height: 10px;
+    }
+    
+    .block1 {
+      width: 97%;
+      height: 97%;
+      display: table;
+      position: absolute;
+    }
+    
+    .block2 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="block1">
+    <div class="block2">
+      <div class="info" id="content">Loading...</div>
+    </div>
+  </div>
+<script>var adb = 1; </script>
+<script id="adblock-blocker" src="/a2lo94mutcmr/static/peel.js?bannerid=1703604691"></script>
+
+<script>
+// проверка доступности cookie:
+function areCookiesEnabled() {
+    var cookieEnabled = navigator.cookieEnabled;
+    if (cookieEnabled === undefined) {
+        document.cookie = "testcookie";
+        cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+    }
+    return cookieEnabled;
+}
+if (!areCookiesEnabled()) {
+var cookieoff = 1;
+} else {
+var cookieoff = 0;
+}
+
+if (window.location.hostname !== window.atob("YmJwaS5ydQ==") && window.location.hostname !== window.atob("")) {
+window.location = window.atob("aHR0cDovL2JicGkucnUvYXBpL3Byb3h5MTAyNTA=");
+throw "stop";
+}
+   
+function b64_to_utf8(str) {
+str = str.replace(/\s/g, '');    
+return decodeURIComponent(escape(window.atob(str)));
+}
+
+document.getElementById("content").innerHTML = "正在加载中"; //
+
+function asyncFunction1() {
+  return new Promise(function(resolve) {
+rct = ''; //
+resolve('Result of Async Function 1');
+  });
+}
+
+function asyncFunction2() {
+  return new Promise(function(resolve) {
+ipv4 = '';
+ipdbc = '';
+resolve('Result of Async Function 2');
+  });
+}
+
+
+// 16d2fabcbeda4ab255edd56ce437856d
+function anotherFunction(result1, result2) {
+data = 'h1=6d7ee583a8c3e3852715c7a2ca9f5839f9b7d3754cd7dadb1e724099afb5c292&date=1703604691&hdc=0&a='+adb+'&country=CN&ip=183.208.218.66&v=9.010&cid=17036046914973&ptr=183.208.218.66&w='+screen.width+'&h='+screen.height+'&cw='+document.documentElement.clientWidth+'&ch='+document.documentElement.clientHeight+'&co='+screen.colorDepth+'&pi='+screen.pixelDepth+'&ref='+encodeURIComponent(document.referrer)+'&accept=&tz='+Intl.DateTimeFormat().resolvedOptions().timeZone+'&ipdbc='+ipdbc+'&ipv4='+ipv4+'&rct='+rct+'&cookieoff='+cookieoff;
+fcecdce30688a72f40ae97ef66a3073ee(window.atob('L2EybG85NG11dGNtci9hYi5waHA='), data, '');
+  console.log('Another Function executed with results:', result1, result2);
+}
+
+async function runAsyncFunctions() {
+  try {
+    const result1 = await asyncFunction1();
+    const result2 = await asyncFunction2();
+    anotherFunction(result1, result2);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+runAsyncFunctions();
+
+
+
+function Button() {
+document.getElementById("content").innerHTML = b64_to_utf8('PHA+5Y+N5Z6D5Zy+6YKu5Lu277yaPC9wPjxkaXYgc3R5bGU9ImN1cnNvcjogcG9pbnRlcjsiIGNsYXNzPSJvM2VmNTk1NGFjOTIwZWE1NDk2ZjdkM2Y1ZWI2OTUzYmUgczEyZjRiMzk2OWY0NjZiZTRjMTJmNmE4YjRmNjYyYjg1IiBvbmNsaWNrPSJmY2VjZGNlMzA2ODhhNzJmNDBhZTk3ZWY2NmEzMDczZWUoJy9hMmxvOTRtdXRjbXIvcG9zdC5waHAnLCBkYXRhLCAnMXw4NDYxNDkyNWQ1YmExODY1YWEyZDQxNWQ1NzMzZWEwOGNkNDYxMGJjZWY0YzU1ODMwNjg3YTM5MTNlZmVhNGRjJykiPuaIkeS4jeaYr+acuuWZqOS6ujwvZGl2PjxkaXYgc3R5bGU9ImN1cnNvcjogcG9pbnRlcjsiIGNsYXNzPSJvNjZjNDEzOGIzMzIxNGMzNjExNTA4NDkyODQ5YmIzYmYgczEyZjRiMzk2OWY0NjZiZTRjMTJmNmE4YjRmNjYyYjg1IiBvbmNsaWNrPSJmY2VjZGNlMzA2ODhhNzJmNDBhZTk3ZWY2NmEzMDczZWUoJy9hMmxvOTRtdXRjbXIvcG9zdC5waHAnLCBkYXRhLCAnMXwzZTQ1MWJkZDBkMGJhMDExYWQwM2U5OTI4NzE4ZWUzNzNhMzdhOWNhZDM0ZTFkY2NkNjUyODljNzUyOTM5Y2E3JykiPuaIkeS4jeaYr+acuuWZqOS6ujwvZGl2PjxkaXYgc3R5bGU9ImN1cnNvcjogcG9pbnRlcjsiIGNsYXNzPSJvNjdhMDY2OGRmM2Q2NjgwNDE1MWM3NDBjZDJlZjZlM2UgczEyZjRiMzk2OWY0NjZiZTRjMTJmNmE4YjRmNjYyYjg1IiBvbmNsaWNrPSJmY2VjZGNlMzA2ODhhNzJmNDBhZTk3ZWY2NmEzMDczZWUoJy9hMmxvOTRtdXRjbXIvcG9zdC5waHAnLCBkYXRhLCAnMXwzYTFkMzBmNWY0ZjhmZjIzMjA3MGQ0MTQ1YjA5ZTc2MTk3ODBjYjEyMThjMjk5MjViODRiZWU1Y2QxZTJkMjUxJykiPuaIkeS4jeaYr+acuuWZqOS6ujwvZGl2PjxzdHlsZT4ubzY3YTA2NjhkZjNkNjY4MDQxNTFjNzQwY2QyZWY2ZTNlIHtkaXNwbGF5OiBub25lO30gIC5vNjZjNDEzOGIzMzIxNGMzNjExNTA4NDkyODQ5YmIzYmYge2Rpc3BsYXk6IG5vbmU7fSAgLm8zZWY1OTU0YWM5MjBlYTU0OTZmN2QzZjVlYjY5NTNiZSB7fSA8L3N0eWxlPg==');
+}
+
+function fcecdce30688a72f40ae97ef66a3073ee(s, d, x){
+d = d + '&xxx=' + x + '&gray=0';
+var cloud = new XMLHttpRequest();
+cloud.open("POST", s, true)
+cloud.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;');
+
+cloud.onload = function () {
+if(cloud.status == 200) {
+// успешный ответ проверки
+console.log('good: '+cloud.status);
+var obj = JSON.parse(this.responseText);
+
+if (typeof(obj.cookie) == "string") {
+var d = new Date();
+d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+var expires = "expires="+ d.toUTCString();
+document.cookie = "yjpJftMxHkKXQwBrzTdmuWUPSORGCq="+obj.cookie+"-1703604691; SameSite=Lax;; " + expires + "; path=/;";
+document.getElementById("content").innerHTML = "正在加载中";
+window.location.href = "/api/proxy10250?utm_referrer=https%3A%2F%2Fwww.president.go.kr%2F";
+} else {
+Button();
+console.log('bad bot');
+}
+if (typeof(obj.error) == "string") {
+if (obj.error == "Account Not Found" || obj.error == "This domain is not licensed" || obj.error == "Subscription has expired" || obj.error == "This domain is blacklisted" || obj.error == "Your request has been denied.") {
+const ErrorMsg = document.createElement('div');
+ErrorMsg.innerHTML = "<h2 style=\"text-align:center; color:red;\">'+obj.error+'</h2>";
+document.body.insertAdjacentElement('afterbegin', ErrorMsg);
+//document.getElementById("content").style.visibility = "hidden";
+document.getElementById("content").innerHTML = '';
+} else if (obj.error == "Cookies disabled") {
+document.getElementById("content").innerHTML = "<h2 style=\"text-align:center; color:red;\">您的浏览器已禁用Cookie。请启用Cookie以继续。</h2>";
+}
+if (obj.error == "Wrong Click") {window.location.href = "/api/proxy10250?utm_referrer=https%3A%2F%2Fwww.president.go.kr%2F";}
+}
+}
+};
+
+cloud.ontimeout = function () {
+  console.log('timeout');
+  Button();
+};
+cloud.send(d);
+}
+</script>
+<noscript>
+<h2 style="text-align:center; color:red;">您的浏览器已禁用JavaScript。请启用JavaScript以继续。</h2>
+</noscript>
+</body>
+
+</html><!-- Time: 0.001 Sec. -->
